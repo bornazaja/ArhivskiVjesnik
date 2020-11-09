@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41F82E88-DC22-44AB-AAFB-34C2CB257E13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArhivskiVjesnikLibrary</RootNamespace>
+    <AssemblyName>ArhivskiVjesnikLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SqlBuilder, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.SqlBuilder.2.0.35\lib\net461\Dapper.SqlBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\DTO\AutorDto.cs" />
+    <Compile Include="BLL\DTO\ClanakDto.cs" />
+    <Compile Include="BLL\DTO\KljucnaRijecDto.cs" />
+    <Compile Include="BLL\DTO\NaslovDto.cs" />
+    <Compile Include="BLL\DTO\SazetakDto.cs" />
+    <Compile Include="BLL\DTO\VrstaDto.cs" />
+    <Compile Include="BLL\Services\Implementations\AutorService.cs" />
+    <Compile Include="BLL\Services\Implementations\ClanakService.cs" />
+    <Compile Include="BLL\Services\Implementations\GenericService.cs" />
+    <Compile Include="BLL\Services\Implementations\KljucnaRijecService.cs" />
+    <Compile Include="BLL\Services\Implementations\NaslovService.cs" />
+    <Compile Include="BLL\Services\Implementations\SazetakService.cs" />
+    <Compile Include="BLL\Services\Implementations\VrstaService.cs" />
+    <Compile Include="BLL\Services\Interfaces\IAutorService.cs" />
+    <Compile Include="BLL\Services\Interfaces\IClanakService.cs" />
+    <Compile Include="BLL\Services\Interfaces\IGenericService.cs" />
+    <Compile Include="BLL\Services\Interfaces\IKljucnaRijecService.cs" />
+    <Compile Include="BLL\Services\Interfaces\INaslovService.cs" />
+    <Compile Include="BLL\Services\Interfaces\ISazetakService.cs" />
+    <Compile Include="BLL\Services\Interfaces\IVrstaService.cs" />
+    <Compile Include="Common\Constants\PaginationConstants.cs" />
+    <Compile Include="Common\Extensions\EnumExtensions.cs" />
+    <Compile Include="Common\Extensions\ListExtensions.cs" />
+    <Compile Include="Common\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Common\Extensions\ValidationExtensions.cs" />
+    <Compile Include="Common\Helpers\ListHelper.cs" />
+    <Compile Include="Common\Helpers\SearchOperationHelper.cs" />
+    <Compile Include="Common\QueryCriterias\Operator.cs" />
+    <Compile Include="Common\QueryCriterias\PageCriteria.cs" />
+    <Compile Include="Common\QueryCriterias\PagedList.cs" />
+    <Compile Include="Common\QueryCriterias\QueryCriteria.cs" />
+    <Compile Include="Common\QueryCriterias\SearchCriteria.cs" />
+    <Compile Include="Common\QueryCriterias\SearchCriteriaType.cs" />
+    <Compile Include="Common\QueryCriterias\SearchOperation.cs" />
+    <Compile Include="Common\QueryCriterias\SortCriteria.cs" />
+    <Compile Include="Common\QueryCriterias\SortDirection.cs" />
+    <Compile Include="DAL\Extensions\IDBConnectionExtensions.cs" />
+    <Compile Include="DAL\Extensions\SqlBuilderExtensions.cs" />
+    <Compile Include="Common\Helpers\ModelHelper.cs" />
+    <Compile Include="DAL\Models\Autor.cs" />
+    <Compile Include="DAL\Models\Clanak.cs" />
+    <Compile Include="DAL\Models\ClanakAutor.cs" />
+    <Compile Include="DAL\Models\ClanakKljucnaRijec.cs" />
+    <Compile Include="DAL\Models\ClanakNaslov.cs" />
+    <Compile Include="DAL\Models\ClanakSazetak.cs" />
+    <Compile Include="DAL\Models\ClanakVrsta.cs" />
+    <Compile Include="DAL\Models\KljucnaRijec.cs" />
+    <Compile Include="DAL\Models\Naslov.cs" />
+    <Compile Include="DAL\Models\Sazetak.cs" />
+    <Compile Include="DAL\Models\Vrsta.cs" />
+    <Compile Include="DAL\Repositories\Implementations\AutorRepository.cs" />
+    <Compile Include="DAL\Repositories\Implementations\ClanakRepository.cs" />
+    <Compile Include="DAL\Repositories\Implementations\GenericRepository.cs" />
+    <Compile Include="DAL\Repositories\Implementations\KljucnaRijecRepository.cs" />
+    <Compile Include="DAL\Repositories\Implementations\NaslovRepository.cs" />
+    <Compile Include="DAL\Repositories\Implementations\SazetakRepository.cs" />
+    <Compile Include="DAL\Repositories\Implementations\VrstaRepository.cs" />
+    <Compile Include="DAL\Repositories\Interfaces\IAutorRepository.cs" />
+    <Compile Include="DAL\Repositories\Interfaces\IClanakRepository.cs" />
+    <Compile Include="DAL\Repositories\Interfaces\IGenericRepository.cs" />
+    <Compile Include="DAL\Repositories\Interfaces\IKljucnaRijecRepository.cs" />
+    <Compile Include="DAL\Repositories\Interfaces\INaslovRepository.cs" />
+    <Compile Include="DAL\Repositories\Interfaces\ISazetakRepository.cs" />
+    <Compile Include="DAL\Repositories\Interfaces\IVrstaRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>

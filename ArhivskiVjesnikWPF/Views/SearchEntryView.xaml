@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="ArhivskiVjesnikWPF.Views.SearchEntryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArhivskiVjesnikWPF.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <ComboBox Grid.Row="0" Grid.Column="0" materialDesign:HintAssist.Hint="Vrsta kriterija"
+                  materialDesign:HintAssist.IsFloating="True" Margin="5"
+                  ItemsSource="{Binding VrsteKriterija}" DisplayMemberPath="Value"
+                  SelectedItem="{Binding SelectedVrstaKriterija}"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" materialDesign:HintAssist.Hint="Stupac"
+                  materialDesign:HintAssist.IsFloating="True" Margin="5"
+                  ItemsSource="{Binding Stupci}" DisplayMemberPath="Value"
+                  SelectedItem="{Binding SelectedStupac}"/>
+        <ComboBox Grid.Row="0" Grid.Column="2" materialDesign:HintAssist.Hint="Operacija"
+                  materialDesign:HintAssist.IsFloating="True" Margin="5"
+                  ItemsSource="{Binding Operacije}" DisplayMemberPath="Value"
+                  SelectedItem="{Binding SelectedOperacija}"/>
+        <ComboBox Grid.Row="0" Grid.Column="3" materialDesign:HintAssist.Hint="Pojam"
+                  materialDesign:HintAssist.IsFloating="True" IsEditable="True"
+                  Text="{Binding Term}" IsTextSearchEnabled="False"
+                  IsDropDownOpen="{Binding IsOpen}" ItemsSource="{Binding Items}"
+                  SelectedItem="{Binding SelectedItem}" Margin="5" Name="searchableComboBox"
+                  cal:Message.Attach="[Event KeyUp] = [Action ExecuteFilteringItems($executionContext)]">
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="Width" Value="{Binding ElementName=searchableComboBox, Path=ActualWidth}"/>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
+        <Button Grid.Row="0" Grid.Column="4" Background="Red" Foreground="White" Margin="5 15 5 5"
+                Command="{Binding Path=DataContext.RemoveCommand, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}">
+            <materialDesign:PackIcon Kind="Delete"/>
+        </Button>
+    </Grid>
+</UserControl>

@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="ArhivskiVjesnikWPF.Views.PageableDataGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArhivskiVjesnikWPF.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="Transparent"
+             FontSize="{StaticResource DefaultFontSize}" FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Row 0-->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                   Text="{Binding Title}" HorizontalAlignment="Left" Margin="10"/>
+
+        <materialDesign:PopupBox Grid.Row="0" Grid.Column="1"
+                                 HorizontalAlignment="Right" StaysOpen="False"
+                                 PlacementMode="BottomAndAlignRightEdges" Margin="10"
+                                 Visibility="{Binding Path=MenuVisibility, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <materialDesign:PopupBox.ToggleContent>
+                <materialDesign:PackIcon Kind="MoreVert"/>
+            </materialDesign:PopupBox.ToggleContent>
+            <ItemsControl ItemsSource="{Binding MenuItems}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Content="{Binding Name}"
+                                Command="{Binding Path=DataContext.MenuCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                CommandParameter="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </materialDesign:PopupBox>
+
+        <!--Row 1-->
+        <ContentControl Grid.Row="1" Grid.Column="0" x:Name="DataGridViewModelBase" Margin="10"/>
+
+        <!--Row 2-->
+        <ContentControl Grid.Row="2" Grid.Column="0" x:Name="PaginationViewModel" Margin="10"
+                        HorizontalAlignment="Center"/>
+
+        <!--Row 3-->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="{Binding NumberOfResults}" HorizontalAlignment="Left"
+                   Margin="10"/>
+    </Grid>
+</UserControl>

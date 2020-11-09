@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Calibri;
+            padding: 10px;
+        }
+    </style>
+    <title>Upute za naprednu prertagu</title>
+</head>
+<body>
+    <div>
+        <h1>Upute za naprednu pretragu</h1>
+        <hr />
+        <h2>Kriteriji pretraživanja</h2>
+        <ul>
+            <li>
+                Operatori
+                <ul>
+                    <li>I - definira da svi kriteriji koji su dodani, budu spojeni sa "I". Npr.: Naziv članka "Sadržava" "arhiv" I Autor "Počinje s" "siniša".</li>
+                    <li>ILI - definira da svi kriteriji koji su dodani, budu spojeni sa "ILI". Npr.: Naziv članka "Sadržava" "arhiv" ILI Autor "Počinje s" "siniša".</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                Dinamičko dodavanje kriterija - kriterije je moguće dinamički dodati (maksimalno 10) i brisati, te svaki kriterij sadržava sljedeće:
+                <ul>
+                    <li>
+                        Vrsta kriterija - sadržava:
+                        <ul>
+                            <li>Uključiv - definira da navedeni kriterij <b>BUDE</b> uključen u pretragu. Npr.: "Uključiv" Autor koji zvaršava s "lajnert".</li>
+                            <li>Nije Uključiv - definira da navedeni kriterij <b>NE BUDE</b> uključen u pretragu. To jest negira kriterij. Npr.: "Nije uključiv" Autor koji završava s "lajnert".</li>
+                        </ul>
+                    </li>
+                    <li>Stupac - definira stupac po kojem će se pretraživati.</li>
+                    <li>
+                        Operacija - sadržava:
+                        <ul>
+                            <li>Manji - npr.: želimo dohvatiti sva godišta članka koji su manja od "2000"</li>
+                            <li>Manji ili jednak - npr.: želimo dohvatiti sva godišta članka koji su manja ili jednaka "2000"</li>
+                            <li>Jednak - npr.: želimo dohvatiti sve članke čija je vrsta članka jednaka "Ostalo"</li>
+                            <li>Počinje s - npr.: želimo dohvatiti sve autore koji počinju s "miro"</li>
+                            <li>Sadržava - npr.: želimo dohvatiti sve autore koji sadrže "ma"</li>
+                            <li>Završava s - želimo dohvatiti sve autore koji završavaju s "lajnert"</li>
+                            <li>Veći - npr.: želimo dohvatiti sve datume izdavanja članka koji su veći od "01.05.1991"</li>
+                            <li>Veći ili jednak - npr.: želimo dohvatiti sve datume izdavanja članka koji su veći ili jednaki "01.05.1991"</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Pojam - unosi se željeni pojam, koji sadaržava <i>autocomplete</i>. Npr.: Ako odaberete stupac "Autor" onda će se prikazivati svi autori sa imenom i prezimenom, koji se nalaze u tom
+                        pojmu. Ista stvar vrijedi za sve ostale stupce kao npr.: naziv članka, godište članka, ključne riječi itd.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><b>NAPOMENE:</b></p>
+        <ul>
+            <li>
+                Operacije se prikazuju na "pametni način", dakle npr.:
+                <ul>
+                    <li>
+                        Ukoliko se odabere stupac s tekstualnim vrijednostima, prikazati će se sljedeće operacije: jednak, počinje s, sadržava i završava s.
+                    </li>
+                    <li>
+                        Ukoliko se odabere stupac s brojčanim ili datumskim vrijednostima vrijednostima, prikazati će se sljedeće operacije: manji, manji ili jednak, jednak, veći i veći ili jednak.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Isto tako se mogu kombinirati operacije, primjerice želimo dohvatiti sva godišta članka od 2000 do 2005, to možemo napraviti tako da u prvom kriteriju upotrijebimo operaciju "Veći ili jednak", a u drugom
+                kriteriju "Manji ili jednak".
+            </li>
+            <li>Datum unosite u formatu yyyy-mm-dd, primjerice za datum 04.05.2010 (dd.mm.yyyy) ili 05/04/2010 (mm/dd/yyyy) unosite 2010-05-04 (yyyy-mm-dd).</li>
+        </ul>
+
+        <h2>Kriterij sortiranja</h2>
+        <ul>
+            <li>
+                Kriterij sortiranja sadržava sljedeće:
+                <ul>
+                    <li>Stupac - definira stupac prema kojem će se sortirati.</li>
+                    <li>Smjer sortiranja - definira smjer prema kojem će se sortirati, sadržava: "Uzlazno" (npr.: A-Z, 0-9) i "Silazno" (npr.: Z-A, 9-0).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Kriterij stranice</h2>
+        <ul>
+            <li>
+                Kriterij stranice sadržava sljedeće:
+                <ul>
+                    <li>Veličina - definira koliko redaka će se prikazivati po stranici, sadržava: 10, 20 i 50.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

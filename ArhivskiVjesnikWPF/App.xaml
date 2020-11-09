@@ -1,0 +1,107 @@
+﻿<Application x:Class="ArhivskiVjesnikWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ArhivskiVjesnikWPF"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Pink.xaml" />
+                <ResourceDictionary>
+                    <local:Bootstrapper x:Key="Bootstrapper"/>
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <system:Double x:Key="DefaultFontSize">15</system:Double>
+                    <system:Double x:Key="CellTextBlockSize">17</system:Double>
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <Style x:Key="WrappedDataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                        <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <TextBlock TextWrapping="Wrap" FontSize="{StaticResource DefaultFontSize}" Text="{Binding}"/>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    <Style x:Key="WrappedTextBlockCellStyle" TargetType="{x:Type TextBlock}">
+                        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                        <Setter Property="MaxHeight" Value="{StaticResource CellTextBlockSize}"/>
+                        <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                    </Style>
+                    <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource MaterialDesignDataGrid}">
+                        <Setter Property="ItemsSource" Value="{Binding Items}"/>
+                        <Setter Property="SelectedItem" Value="{Binding SelectedItem}"/>
+                        <Setter Property="AutoGenerateColumns" Value="False"/>
+                        <Setter Property="CanUserAddRows" Value="False"/>
+                        <Setter Property="CanUserDeleteRows" Value="False"/>
+                        <Setter Property="CanUserReorderColumns" Value="False"/>
+                        <Setter Property="CanUserResizeColumns" Value="False"/>
+                        <Setter Property="CanUserResizeRows" Value="False"/>
+                        <Setter Property="CanUserSortColumns" Value="False"/>
+                        <Setter Property="IsReadOnly" Value="True"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="MinColumnWidth" Value="100"/>
+                        <Setter Property="ColumnWidth" Value="*"/>
+                    </Style>
+                    <Style x:Key="MaterialDesignPagainationButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatButton}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Padding" Value="0"/>
+                    </Style>
+                    <Style x:Key="MaterialDesignIconPackPaginationStyle" TargetType="materialDesign:PackIcon">
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Height" Value="20"/>
+                    </Style>
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <DataTemplate x:Key="MenuCellTemplate">
+                        <materialDesign:PopupBox StaysOpen="False" PlacementMode="BottomAndAlignRightEdges"
+                                                 Visibility="{Binding Path=DataContext.MenuVisibility, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
+                            <materialDesign:PopupBox.ToggleContent>
+                                <materialDesign:PackIcon Kind="MoreVert"/>
+                            </materialDesign:PopupBox.ToggleContent>
+                            <ItemsControl ItemsSource="{Binding Path=DataContext.ActionItems, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Content="{Binding Name}" FontSize="{StaticResource DefaultFontSize}" Command="{Binding Path=DataContext.ActionCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                CommandParameter="{Binding}"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </materialDesign:PopupBox>
+                    </DataTemplate>
+                    <DataTemplate x:Key="URLCellTemplate">
+                        <TextBlock>
+                            <Hyperlink Command="{Binding Path=DataContext.URLCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding URL}">
+                                <TextBlock Text="{Binding URL}" Style="{StaticResource WrappedTextBlockCellStyle}"/>
+                            </Hyperlink>
+                        </TextBlock>
+                    </DataTemplate>
+                    <DataTemplate x:Key="URLTemplate">
+                        <TextBlock>
+                            <Hyperlink Command="{Binding Path=DataContext.URLCommand, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"
+                                       CommandParameter="{Binding Path=DataContext.URL, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}">
+                                <TextBlock Text="{Binding Path=DataContext.URL, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" TextWrapping="Wrap"/>
+                            </Hyperlink>
+                        </TextBlock>
+                    </DataTemplate>
+                    <Style x:Key="TabControlStyle" TargetType="{x:Type TabControl}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Style.Resources>
+                            <Style TargetType="{x:Type TabItem}">
+                                <Setter Property="Padding" Value="10"/>
+                            </Style>
+                        </Style.Resources>
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

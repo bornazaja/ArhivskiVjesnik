@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\squirrel.windows.2.0.0\build\squirrel.windows.props" Condition="Exists('..\packages\squirrel.windows.2.0.0\build\squirrel.windows.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79998EEF-D3D1-4A2B-8233-58D2F76D7455}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ArhivskiVjesnikWPF</RootNamespace>
+    <AssemblyName>ArhivskiVjesnikWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.MsDelta, Version=1.1.0.0, Culture=neutral, PublicKeyToken=46b2138a390abf55, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.MsDelta.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.PatchApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e8888ee913ed789, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.PatchApi.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.6.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.6\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.3.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.1.3\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.11.3.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.11.3\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.11.3.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.11.3\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.11.3.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.11.3\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.11.3.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.11.3\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Squirrel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.2.0.0\lib\Net45\NuGet.Squirrel.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.17.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.17.1\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=9.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.9.5.37\lib\net461\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Squirrel, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.2.0.0\lib\Net45\Squirrel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Enums\DialogResult.cs" />
+    <Compile Include="Events\ComprehensiveDetaljiAutoraClickedEvent.cs" />
+    <Compile Include="Events\ComprehensiveDetaljiKljucneRijeciClickedEvent.cs" />
+    <Compile Include="Events\ComprehensiveDetaljiNaslovaClickedEvent.cs" />
+    <Compile Include="Events\ComprehensiveDetaljiSazetkaClickedEvent.cs" />
+    <Compile Include="Events\ComprehensiveDetaljiVrsteClickedEvent.cs" />
+    <Compile Include="Events\NatragNaAutoreClickedEvent.cs" />
+    <Compile Include="Events\NatragNaClankeClickedEvent.cs" />
+    <Compile Include="Events\NatragNaKljucneRijeciClickedEvent.cs" />
+    <Compile Include="Events\NatragNaNasloveClickedEvent.cs" />
+    <Compile Include="Events\NatragNaSazetkeClickedEvent.cs" />
+    <Compile Include="Events\NatragNaVrsteClickedEvent.cs" />
+    <Compile Include="Extensions\CommonExtensions.cs" />
+    <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Managers\Implenentations\ExtendedWindowManager.cs" />
+    <Compile Include="Managers\Interfaces\IExtendedWindowManager.cs" />
+    <Compile Include="Models\ActionItemModel.cs" />
+    <Compile Include="Models\DrawerItemModel.cs" />
+    <Compile Include="Models\MenuItemModel.cs" />
+    <Compile Include="ViewModels\AutoriDataGridViewModel.cs" />
+    <Compile Include="ViewModels\AutoriViewModel.cs" />
+    <Compile Include="ViewModels\BasicDetaljiAutoraViewModel.cs" />
+    <Compile Include="ViewModels\BasicDetaljiClankaViewModel.cs" />
+    <Compile Include="ViewModels\ClanciDataGridViewModel.cs" />
+    <Compile Include="ViewModels\ClanciViewModel.cs" />
+    <Compile Include="ViewModels\CommandHandlerViewModel.cs" />
+    <Compile Include="ViewModels\ComprehensiveDetaljiAutoraViewModel.cs" />
+    <Compile Include="ViewModels\ComprehensiveDetaljiClankaViewModel.cs" />
+    <Compile Include="ViewModels\BasicDetaljiKljucneRijeciViewModel.cs" />
+    <Compile Include="ViewModels\BasicDetaljiNaslovaViewModel.cs" />
+    <Compile Include="ViewModels\BasicDetaljiSazetkaViewModel.cs" />
+    <Compile Include="ViewModels\BasicDetaljiVrsteViewModel.cs" />
+    <Compile Include="ViewModels\ComprehensiveDetaljiKljucneRijeciViewModel.cs" />
+    <Compile Include="ViewModels\ComprehensiveDetaljiNaslovaViewModel.cs" />
+    <Compile Include="ViewModels\ComprehensiveDetaljiSazetkaViewModel.cs" />
+    <Compile Include="ViewModels\ComprehensiveDetaljiVrsteViewModel.cs" />
+    <Compile Include="ViewModels\ContentControlInfoViewModel.cs" />
+    <Compile Include="ViewModels\DataGridViewModelBase.cs" />
+    <Compile Include="ViewModels\IDialogResultViewModel.cs" />
+    <Compile Include="ViewModels\IBasicDtoDetailsViewModel.cs" />
+    <Compile Include="ViewModels\KljucneRijeciDataGridViewModel.cs" />
+    <Compile Include="ViewModels\KljucneRijeciViewModel.cs" />
+    <Compile Include="ViewModels\LoadingViewModel.cs" />
+    <Compile Include="ViewModels\NaprednaPretragaViewModel.cs" />
+    <Compile Include="ViewModels\NasloviDataGridViewModel.cs" />
+    <Compile Include="ViewModels\NasloviViewModel.cs" />
+    <Compile Include="ViewModels\PageableDataGridViewModel.cs" />
+    <Compile Include="ViewModels\PaginationViewModel.cs" />
+    <Compile Include="ViewModels\SazetciDataGridViewModel.cs" />
+    <Compile Include="ViewModels\SazetciViewModel.cs" />
+    <Compile Include="ViewModels\SearchEntryViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\StatusInfoViewModel.cs" />
+    <Compile Include="ViewModels\VrsteDataGridViewModel.cs" />
+    <Compile Include="ViewModels\VrsteViewModel.cs" />
+    <Compile Include="Views\AutoriDataGridView.xaml.cs">
+      <DependentUpon>AutoriDataGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AutoriView.xaml.cs">
+      <DependentUpon>AutoriView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BasicDetaljiAutoraView.xaml.cs">
+      <DependentUpon>BasicDetaljiAutoraView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BasicDetaljiClankaView.xaml.cs">
+      <DependentUpon>BasicDetaljiClankaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BasicDetaljiKljucneRijeciView.xaml.cs">
+      <DependentUpon>BasicDetaljiKljucneRijeciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BasicDetaljiNaslovaView.xaml.cs">
+      <DependentUpon>BasicDetaljiNaslovaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BasicDetaljiSazetkaView.xaml.cs">
+      <DependentUpon>BasicDetaljiSazetkaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BasicDetaljiVrsteView.xaml.cs">
+      <DependentUpon>BasicDetaljiVrsteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClanciDataGridView.xaml.cs">
+      <DependentUpon>ClanciDataGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClanciView.xaml.cs">
+      <DependentUpon>ClanciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComprehensiveDetaljiAutoraView.xaml.cs">
+      <DependentUpon>ComprehensiveDetaljiAutoraView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComprehensiveDetaljiClankaView.cs">
+      <DependentUpon>ComprehensiveDetaljiClankaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComprehensiveDetaljiKljucneRijeciView.xaml.cs">
+      <DependentUpon>ComprehensiveDetaljiKljucneRijeciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComprehensiveDetaljiNaslovaView.xaml.cs">
+      <DependentUpon>ComprehensiveDetaljiNaslovaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComprehensiveDetaljiSazetkaView.xaml.cs">
+      <DependentUpon>ComprehensiveDetaljiSazetkaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComprehensiveDetaljiVrsteView.xaml.cs">
+      <DependentUpon>ComprehensiveDetaljiVrsteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContentControlInfoView.xaml.cs">
+      <DependentUpon>ContentControlInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KljucneRijeciDataGridView.xaml.cs">
+      <DependentUpon>KljucneRijeciDataGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KljucneRijeciView.xaml.cs">
+      <DependentUpon>KljucneRijeciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadingView.xaml.cs">
+      <DependentUpon>LoadingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NaprednaPretragaView.xaml.cs">
+      <DependentUpon>NaprednaPretragaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NasloviDataGridView.xaml.cs">
+      <DependentUpon>NasloviDataGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NasloviView.xaml.cs">
+      <DependentUpon>NasloviView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageableDataGridView.xaml.cs">
+      <DependentUpon>PageableDataGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaginationView.xaml.cs">
+      <DependentUpon>PaginationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SazetciDataGridView.xaml.cs">
+      <DependentUpon>SazetciDataGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SazetciView.xaml.cs">
+      <DependentUpon>SazetciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchEntryView.xaml.cs">
+      <DependentUpon>SearchEntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Events\ComprehensiveDetaljiClankaClickedEvent.cs" />
+    <Compile Include="Events\SearchCriteriaDeleteClickedEvent.cs" />
+    <Compile Include="Views\StatusInfoView.xaml.cs">
+      <DependentUpon>StatusInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VrsteDataGridView.xaml.cs">
+      <DependentUpon>VrsteDataGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VrsteView.xaml.cs">
+      <DependentUpon>VrsteView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\AutoriDataGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AutoriView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BasicDetaljiAutoraView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BasicDetaljiClankaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BasicDetaljiKljucneRijeciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BasicDetaljiNaslovaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BasicDetaljiSazetkaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BasicDetaljiVrsteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClanciDataGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClanciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComprehensiveDetaljiAutoraView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComprehensiveDetaljiClankaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ComprehensiveDetaljiKljucneRijeciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComprehensiveDetaljiNaslovaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComprehensiveDetaljiSazetkaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComprehensiveDetaljiVrsteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContentControlInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KljucneRijeciDataGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KljucneRijeciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoadingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NaprednaPretragaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NasloviDataGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NasloviView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageableDataGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PaginationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SazetciDataGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SazetciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StatusInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VrsteDataGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VrsteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Data\ArhivskiVjesnikDB.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArhivskiVjesnikLibrary\ArhivskiVjesnikLibrary.csproj">
+      <Project>{41f82e88-dc22-44ab-aafb-34c2cb257e13}</Project>
+      <Name>ArhivskiVjesnikLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\UputeZaNaprednuPretragu.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\squirrel.windows.2.0.0\build\squirrel.windows.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\squirrel.windows.2.0.0\build\squirrel.windows.props'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" />
+</Project>

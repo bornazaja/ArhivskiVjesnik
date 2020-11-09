@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="ArhivskiVjesnikWPF.Views.ClanciDataGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArhivskiVjesnikWPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Row 0-->
+        <DataGrid Grid.Row="0" Grid.Column="0" Style="{StaticResource DataGridStyle}"
+                  ColumnHeaderStyle="{StaticResource WrappedDataGridColumnHeaderStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn ElementStyle="{StaticResource WrappedTextBlockCellStyle}"
+                                    Header="ID Članak" Binding="{Binding IDClanak}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource WrappedTextBlockCellStyle}"
+                                    Header="Naziv" Binding="{Binding Naziv}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource WrappedTextBlockCellStyle}"
+                                    Header="Godište" Binding="{Binding Godiste}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource WrappedTextBlockCellStyle}"
+                                    Header="Broj" Binding="{Binding Broj}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource WrappedTextBlockCellStyle}"
+                                    Header="Volumen" Binding="{Binding Volumen}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource WrappedTextBlockCellStyle}"
+                                    Header="Datum izdavanja" Binding="{Binding DatumIzdavanja, StringFormat='dd.MM.yyyy'}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource WrappedTextBlockCellStyle}"
+                                    Header="Datum objave" Binding="{Binding DatumObjave, StringFormat='dd.MM.yyyy'}"/>
+                <DataGridTemplateColumn Header="URL" CellTemplate="{StaticResource URLCellTemplate}"/>
+                <DataGridTemplateColumn MaxWidth="50" CellTemplate="{StaticResource MenuCellTemplate}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
