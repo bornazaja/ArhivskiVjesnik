@@ -3,7 +3,7 @@ Izrada aplikacije za doktorsku disertaciju (dr. sc. Lane Žaje) na skupu podatak
 
 Izvor podataka: Hrčak - portal hrvatskih znastvenih i hrvatskih časopisa.
 
-Tehnolgije
+Tehnologije
 * C#
 * WPF
 * Caliburn Micro
