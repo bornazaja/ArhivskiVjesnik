@@ -3,15 +3,15 @@ Izrada aplikacije za doktorsku disertaciju (dr. sc. Lane Žaje) na skupu podatak
 
 Izvor podataka: Hrčak - portal hrvatskih znastvenih i hrvatskih časopisa.
 
-Tehnologije
+### Tehnologije
 * C#
 * WPF
 * Caliburn Micro
 * SQLite
 
-Zahtjevi
+### Zahtjevi
 * Visual Studio
 
-Upute
+### Upute
 * Preuzeti i *unzipati* projekt
 * Otvoriti Visual Studio i pokrenuti `ArhivskiVjesnikWPF` projekt
