@@ -14,7 +14,7 @@ namespace ArhivskiVjesnikConsole
 {
     public static class ContainerConfig
     {
-        public static IContainer Configure()
+        public static IContainer GetContainer()
         {
             var builder = new ContainerBuilder();
 

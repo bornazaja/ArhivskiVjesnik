@@ -10,7 +10,7 @@ Izvor podataka: Hrčak - portal hrvatskih znastvenih i hrvatskih časopisa.
 * SQLite
 
 ### Zahtjevi
-* Visual Studio
+* Visual Studio 2012 ili više
 
 ### Upute
 * Preuzeti i *unzipati* projekt

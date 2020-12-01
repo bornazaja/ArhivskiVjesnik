@@ -6,7 +6,7 @@ namespace ArhivskiVjesnikConsole
     {
         static void Main(string[] args)
         {
-            var container = ContainerConfig.Configure();
+            var container = ContainerConfig.GetContainer();
 
             using (var scope = container.BeginLifetimeScope())
             {
