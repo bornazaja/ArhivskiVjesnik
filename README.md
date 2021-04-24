@@ -1,7 +1,7 @@
 # Arhivski Vjesnik
 Izrada aplikacije za doktorsku disertaciju (dr. sc. Lane Žaje) na skupu podataka od 2493 članaka.
 
-Izvor podataka: Hrčak - portal hrvatskih znastvenih i hrvatskih časopisa.
+Izvor podataka: Hrčak - portal hrvatskih znastvenih i stručnih časopisa.
 
 ### Tehnologije
 * C#
